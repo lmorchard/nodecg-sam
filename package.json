@@ -1,0 +1,62 @@
+{
+  "name": "sam-say",
+  "version": "0.0.0",
+  "description": "Retro speech synthesis via Software Automated Mouth",
+  "homepage": "",
+  "author": {
+    "name": "Les Orchard",
+    "email": "me@lmorchard.com",
+    "url": ""
+  },
+  "scripts": {
+    "prepare": "snowpack"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "mount": [
+      {
+        "directory": "web_modules",
+        "endpoint": "web_modules"
+      }
+    ],
+    "dashboardPanels": [
+      {
+        "name": "sam",
+        "title": "Sam",
+        "width": 2,
+        "file": "sam.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "sam-say.html",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "snowpack": "^1.7.1"
+  },
+  "dependencies": {
+    "sam-js": "^0.1.1"
+  }
+}

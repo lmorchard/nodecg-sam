@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script type="module">
+      import SamJs from '../web_modules/sam-js.js';
+      let sam = new SamJs();
+
+      nodecg.listenFor('say', 'sam-say', ({ text, phonetic }) => {
+        nodecg.log.debug('sam-say', text, phonetic);
+        sam.speak(text, phonetic);
+      });
+    </script>
+
+    <script type="module">
+      import(
+        '/bundles/file-watcher/public/file-watcher.mjs'
+      ).then(({ default: reloadOnFileChange }) => reloadOnFileChange(nodecg));
+    </script>
+  </body>
+</html>
